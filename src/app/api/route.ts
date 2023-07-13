@@ -24,7 +24,7 @@ const getUserInfo = async ({ username }: { username: string }) => {
 }
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const username = searchParams.get('username')
+  const username = searchParams.get('username') || ''
 
   const data = await getUserInfo({ username })
   return NextResponse.json({ data })
