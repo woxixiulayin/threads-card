@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import ApiThreads from 'threads-api'
 
-const getUserInfo = async ({ username }) => {
+const getUserInfo = async ({ username }: { username: string }) => {
   const threadsAPI = new ApiThreads.ThreadsAPI({
     fbLSDToken: 'nEt4W-takTpf7H9o3pJVI0',
     verbose: true,
