@@ -16,13 +16,14 @@ const getUserInfo = async ({ username }: { username: string }) => {
     return
   }
   const user = await threadsAPI.getUserProfile(username, userID)
-  const posts = await threadsAPI.getUserProfileThreads(username, userID);
+  // const posts = await threadsAPI.getUserProfileThreads(username, userID);
   return {
     user,
-    posts
+    // posts
   }
 }
 export async function GET(request: Request) {
+  console.log(11111)
   const { searchParams } = new URL(request.url)
   const username = searchParams.get('username') || ''
 
